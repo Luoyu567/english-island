@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>英语奇趣岛</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <section id="page-home" class="page active">
+      <h1>英语奇趣岛</h1>
+      <p class="subtitle">适合 3-12 岁儿童</p>
+
+      <div class="card">
+        <h2>选择年龄组</h2>
+        <button class="age-btn" data-age="3-5">3-5岁 听音找图</button>
+        <button class="age-btn" data-age="6-8">6-8岁 词图配对与拼词</button>
+        <button class="age-btn" data-age="9-12">9-12岁 句子闯关</button>
+      </div>
+
+      <div class="card">
+        <h2>学习记录</h2>
+        <p id="home-record">暂无记录</p>
+        <button id="btn-review-wrong">错题复习</button>
+        <button id="btn-report">学习报告</button>
+      </div>
+
+      <div class="card">
+        <h2>项目档次</h2>
+        <p>高档完整版：含低档、中档、高档全部功能。</p>
+      </div>
+    </section>
+
+    <section id="page-theme" class="page">
+      <h1>选择主题</h1>
+      <div id="theme-list" class="theme-list"></div>
+      <button class="back-btn" data-back="home">返回首页</button>
+    </section>
+
+    <section id="page-game" class="page">
+      <div class="game-header">
+        <button id="btn-exit" class="small-btn">退出</button>
+        <span id="game-progress">第 1 / 10 题</span>
+        <button id="btn-pause" class="small-btn">暂停</button>
+        <button id="btn-mute" class="small-btn">声音：开</button>
+      </div>
+      <div id="game-stars" class="stars">⭐ 0</div>
+      <div id="game-level" class="level-tip">难度：1</div>
+      <div id="question-area" class="question-area"></div>
+      <div id="feedback" class="feedback"></div>
+      <div class="game-footer">
+        <button id="btn-replay" class="small-btn">重播发音</button>
+        <button id="btn-hint" class="small-btn">提示</button>
+        <button id="btn-next" class="small-btn hidden">下一题</button>
+      </div>
+    </section>
+
+    <section id="page-result" class="page">
+      <h1>本轮完成！</h1>
+      <div id="result-content" class="card"></div>
+      <button id="btn-report-result" class="big-btn">查看学习报告</button>
+      <button id="btn-restart" class="big-btn">再玩一次</button>
+      <button class="back-btn" data-back="home">返回首页</button>
+    </section>
+
+    <section id="page-report" class="page">
+      <h1>学习报告</h1>
+      <div id="report-content" class="card"></div>
+      <button class="back-btn" data-back="home">返回首页</button>
+    </section>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <p id="modal-text"></p>
+      <div class="modal-actions">
+        <button id="modal-cancel" class="small-btn">取消</button>
+        <button id="modal-ok" class="small-btn">确定</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="pause-mask" class="pause-mask hidden">
+    <div class="pause-box">
+      <p>游戏已暂停</p>
+      <button id="btn-resume" class="big-btn">继续</button>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
